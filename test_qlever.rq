@@ -1,0 +1,10 @@
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+SELECT 
+  ("01.10"^^xsd:decimal = "1.1"^^xsd:decimal as ?std_true)
+  ("01.10"^^xsd:decimal = "1.2"^^xsd:decimal as ?std_false)
+  ("01.10"^^xsd:decimal = "11e-1"^^xsd:decimal as ?exp_true)
+  ("01.10"^^xsd:decimal = "11e-2"^^xsd:decimal as ?exp_false)
+{ ?s ?p ?o } LIMIT 1 # qlever does not support an empty WHERE clause
+
+# If the result of this query is true, false, true, false
+# then this SPARQL implementation correctly supports the E notation for xsd:decimal

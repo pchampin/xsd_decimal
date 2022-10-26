@@ -1,0 +1,12 @@
+Ontology(<urn:hermit:kb#>
+
+  SubClassOf( <tag:NotSame> owl:Thing ) Declaration( Class( <tag:NotSame> ) )
+    SubClassOf( <tag:S2> <tag:NotSame> ) Declaration( Class( <tag:S2> ) )
+    SubClassOf( <tag:S4> <tag:NotSame> ) Declaration( Class( <tag:S4> ) )
+  SubClassOf( <tag:Same> owl:Thing ) Declaration( Class( <tag:Same> ) )
+    SubClassOf( <tag:S0> <tag:Same> ) Declaration( Class( <tag:S0> ) )
+    SubClassOf( <tag:S1> <tag:Same> ) Declaration( Class( <tag:S1> ) )
+    SubClassOf( <tag:S3> <tag:Same> ) Declaration( Class( <tag:S3> ) )
+
+)
+

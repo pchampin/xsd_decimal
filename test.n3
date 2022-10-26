@@ -1,0 +1,21 @@
+@prefix math: <http://www.w3.org/2000/10/swap/math#> .
+@prefix log: <http://www.w3.org/2000/10/swap/log#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix : <tag:>.
+
+:s0 :p "01.10"^^xsd:decimal.
+:s1 :p "1.1"^^xsd:decimal.
+:s2 :p "1.2"^^xsd:decimal.
+:s3 :p "11e-1"^^xsd:decimal.
+:s4 :p "11e-2"^^xsd:decimal.
+#:s5 :p "foo"^^xsd:decimal.
+
+{ 
+  :s0 :p ?x.
+  ?s :p ?y.
+  ?s log:notEqualTo :s0.
+  ?x math:equalTo ?y
+} => { :TEST :RESULT ?s }.
+
+# if test results are exactly :s1 and :s3,
+# then this implementation of N3 supports the E notation for xsd:decimal.

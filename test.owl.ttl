@@ -1,0 +1,33 @@
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix : <tag:>.
+
+:s0 :p "01.10"^^xsd:decimal.
+:s1 :p "1.1"^^xsd:decimal.
+:s2 :p "1.2"^^xsd:decimal.
+:s3 :p "11e-1"^^xsd:decimal.
+:s4 :p "11e-2"^^xsd:decimal.
+#:s5 :p "foo"^^xsd:decimal.
+
+:p a owl:DatatypeProperty, owl:FunctionalProperty.
+
+:S0 a owl:Class; owl:equivalentClass [ owl:oneOf (:s0) ].
+:S1 a owl:Class; owl:equivalentClass [ owl:oneOf (:s1) ].
+:S2 a owl:Class; owl:equivalentClass [ owl:oneOf (:s2) ].
+:S3 a owl:Class; owl:equivalentClass [ owl:oneOf (:s3) ].
+:S4 a owl:Class; owl:equivalentClass [ owl:oneOf (:s4) ].
+
+:Same a owl:Class ;
+    owl:equivalentClass [
+       a  owl:Restriction;
+       owl:onProperty :p;
+       owl:hasValue "01.10"^^xsd:decimal;
+    ];
+.  # should be superclass of :S0, :S1 and :S3
+
+:NotSame a owl:Class ;
+    owl:complementOf :Same;
+.  # should be superclass of :S2, :S4
+
+# expected conclusion also available in conclusion.owl
