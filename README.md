@@ -38,7 +38,7 @@ So in practice, it might be relatively safe to use it, even though it is not (ye
 
 | Implementation | Version | Evidence |
 | -------------- | ------- | -------- |
-| [Apache Jena](https://jena.apache.org/) | 10.0.2 | tested with [test.rq](test.rq) |
+| [Apache Jena](https://jena.apache.org/) | 4.6.1 | tested with [test.rq](test.rq) |
 | [Corese](https://project.inria.fr/corese/) | [commit 3ebe016](https://github.com/Wimmics/corese/commit/3ebe01681b28ec32a4b6e92fda494572c3af88b8) | tested with [test.rq](test.rq) |
 | [Oxigraph](https://github.com/oxigraph/oxigraph) | [commit 825b330](https://github.com/oxigraph/oxigraph/commit/825b330132ebfc0f1669b4c2ec2529a96a9a11dd) | tested with [test.rq](test.rq) |
 | [Ruby RDF](https://ruby-rdf.github.io/) | 3.2.9 | tested with [test.rq](test.rq) |
